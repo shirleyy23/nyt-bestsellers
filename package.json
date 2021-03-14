@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "ng serve --proxy-config proxy.config.json",
+    "build": "ng build --prod --aot && nlb",
+    "nlb": "netlify-lambda build src/functions",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -19,6 +20,11 @@
     "@angular/platform-browser": "~11.2.4",
     "@angular/platform-browser-dynamic": "~11.2.4",
     "@angular/router": "~11.2.4",
+    "@babel/preset-typescript": "^7.13.0",
+    "@types/aws-lambda": "^8.10.72",
+    "@types/node-fetch": "^2.5.8",
+    "netlify-lambda": "^2.0.3",
+    "node-fetch": "^2.6.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"

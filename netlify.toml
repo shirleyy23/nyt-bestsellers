@@ -1,0 +1,4 @@
+[build]
+	publish = "dist/nyt-bestsellers"
+  command = "ng build --prod --aot"
+	functions = "functions"
