@@ -1,6 +1,6 @@
 import { APIGatewayEvent, Context } from 'aws-lambda';
 import fetch from 'node-fetch';
-const { NYT_LIST_COMBINED_FICTION_URL} = process.env;
+const { NYT_LIST_COMBINED_FICTION_URL } = process.env;
 const { NYT_API_KEY } = process.env;
 
 exports.handler = async (event: APIGatewayEvent, context: Context) => {
@@ -12,13 +12,13 @@ exports.handler = async (event: APIGatewayEvent, context: Context) => {
       statusCode: 200,
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(books)
-    }
+    };
   } catch (err) {
-    console.log(err, 'fetch failed')
+    console.log(err, 'fetch failed');
     return {
       statusCode: 500,
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({msg: err.message})
-    }
+    };
   }
-}
+};
