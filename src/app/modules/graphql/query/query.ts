@@ -5,6 +5,20 @@ query {
 		results {
 			books {
 				description
+				title
+				rank
+				rank_last_week
+				publisher
+				author
+				book_image
+				book_image_width
+				book_image_height
+				book_review_link
+				first_chapter_link
+				buyLinks {
+					name
+					url
+				}
 			}
 		}
 	}
@@ -16,6 +30,20 @@ query {
 		results {
 			books {
 				description
+				title
+				rank
+				rank_last_week
+				publisher
+				author
+				book_image
+				book_image_width
+				book_image_height
+				book_review_link
+				first_chapter_link
+				buyLinks {
+					name
+					url
+				}
 			}
 		}
 	}
