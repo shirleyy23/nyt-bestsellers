@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { GraphQLModule } from 'GraphQL/graphql.module';
 import { StoreModule } from '@ngrx/store';
 import { AppReducer } from './app.reducer';
+import { BooksModule } from 'App/modules/books/books.module';
+import { DetailsModule } from 'Details/details.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { AppReducer } from './app.reducer';
     HttpClientModule,
     CoreModule,
     GraphQLModule,
+    BooksModule,
+    DetailsModule,
     StoreModule.forRoot(AppReducer)
   ],
   providers: [],
