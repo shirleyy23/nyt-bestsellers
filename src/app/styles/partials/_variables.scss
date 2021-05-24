@@ -22,4 +22,9 @@ $divider_colour: $grey_200;
 /*Animations*/
 $base_transition: 0.2s ease-in all;
 
+/*Border Radius*/
 $default_border_radius: $spacing_small_xxx;
+
+/*Media Queries*/
+$small: 575px;
+$medium: 767px;

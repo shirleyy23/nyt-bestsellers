@@ -15,6 +15,13 @@
       & > card {
         flex: 1 1 auto;
       }
+      @media screen and (max-width: $medium) {
+        flex: 0 0 45%;
+        font-size: $default_label_font_size;
+      }
+      @media screen and (max-width: $small) {
+        flex: 0 0 80%;
+      }
     }
   }
 }
