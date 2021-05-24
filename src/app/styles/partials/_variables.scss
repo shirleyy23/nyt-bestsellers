@@ -1,0 +1,25 @@
+@import "../partials/_colours";
+@import "../partials/_spacing";
+@import "../partials/_typography";
+
+/*Text*/
+$default_font_size: $font_size_regular;
+$default_font_family: $roboto_400;
+$default_font_colour: $grey_800;
+$heading_font_family: $playfair_display_500;
+$heading_font_colour: $grey_1000;
+$status_label_font_size: $font_size_small;
+
+/*Colours*/
+$primary_colour: $blue_dark_100;
+$primary_colour_hover: $blue_dark_300;
+$font_inverse_colour: $white;
+$panel_bg: $blue_light_100;
+$box_shadow_colour_light: rgba($blue_black_100, 0.1);
+$box_shadow_colour_dark: rgba($blue_black_200, 0.5);
+$divider_colour: $grey_200;
+
+/*Animations*/
+$base_transition: 0.2s ease-in all;
+
+$default_border_radius: $spacing_small_xxx;
