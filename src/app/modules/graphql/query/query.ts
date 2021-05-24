@@ -9,6 +9,7 @@ query {
 				rank
 				rank_last_week
 				publisher
+				weeks_on_list
 				author
 				book_image
 				book_image_width
@@ -35,6 +36,7 @@ query {
 				rank_last_week
 				publisher
 				author
+				weeks_on_list
 				book_image
 				book_image_width
 				book_image_height
