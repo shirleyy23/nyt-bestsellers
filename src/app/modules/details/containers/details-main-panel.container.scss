@@ -43,6 +43,12 @@
         width: 20vw;
         height: auto;
         margin-bottom: $spacing_large_x;
+        @media screen and (max-width: $medium) {
+          width: 30vw;
+        }
+        @media screen and (max-width: $small) {
+          width: 40vw;
+        }
       }
       &-title {
         flex: 0 0 100%;
