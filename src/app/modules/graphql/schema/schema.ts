@@ -39,7 +39,7 @@ const schemaTypeDefs = gql`
 		book_image_height: Int
 		book_review_link: String
 		first_chapter_link: String
-		buyLinks: [BuyLinks]
+		buy_links: [BuyLinks]
 	}
 	type Results {
 		books: [Book]

@@ -18,7 +18,7 @@ export const initialState: CoreState = {
 		book_image_height: 0,
 		book_review_link: '',
 		first_chapter_link: '',
-		buyLinks: []
+		buy_links: []
 	}
 };
 
