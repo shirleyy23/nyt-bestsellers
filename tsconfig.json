@@ -29,6 +29,12 @@
       ],
       "GraphQL/*": [
         "app/modules/graphql/*"
+      ],
+      "Home/*": [
+        "app/modules/home/*"
+      ],
+      "Details/*": [
+        "app/modules/details/*"
       ]
     },
     "allowSyntheticDefaultImports": true

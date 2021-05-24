@@ -1,0 +1,11 @@
+<a
+[ngClass]="{
+	'vendor': true,
+	'vendor--amazon': name === constants.vendor.amazon,
+	'vendor--appleBooks': name === constants.vendor.appleBooks,
+	'vendor--barnesAndNobles': name === constants.vendor.barnesAndNoble,
+	'vendor--booksAMillion': name === constants.vendor.booksAMillion,
+	'vendor--bookShop': name === constants.vendor.bookShop,
+	'vendor--indieBound': name === constants.vendor.indieBound
+}" 
+href="{{url}}" target="_blank">{{name}}</a>

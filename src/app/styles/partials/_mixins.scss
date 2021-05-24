@@ -1,0 +1,30 @@
+@import "../partials/_colours";
+@import "../partials/_spacing";
+@import "../partials/_variables";
+
+@mixin Button {
+  display: inline-block;
+  border-radius: $default_border_radius;
+  box-shadow: none;
+  border: none;
+  padding: $spacing_small_xx $spacing_small_x;
+  cursor: pointer;
+  transition: 0.2s ease-in all;
+}
+
+@mixin Paper {
+  background-color: $white;
+  display: flex;
+  border-radius: $default_border_radius;
+  padding: $spacing_large_x;
+  box-shadow: 0 4px 6px -1px $box_shadow_colour_light,
+    0 2px 4px -1px $box_shadow_colour_dark;
+}
+
+@mixin Panel {
+  background-color: $panel_bg;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: $spacing_large_xxx 0;
+}

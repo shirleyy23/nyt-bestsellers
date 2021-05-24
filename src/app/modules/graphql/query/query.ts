@@ -15,7 +15,7 @@ query {
 				book_image_height
 				book_review_link
 				first_chapter_link
-				buyLinks {
+				buy_links {
 					name
 					url
 				}
@@ -40,7 +40,7 @@ query {
 				book_image_height
 				book_review_link
 				first_chapter_link
-				buyLinks {
+				buy_links {
 					name
 					url
 				}

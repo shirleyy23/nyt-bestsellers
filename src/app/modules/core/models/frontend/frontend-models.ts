@@ -13,7 +13,7 @@ export interface Book {
 	book_image_height: number;
 	book_review_link: string;
 	first_chapter_link: string;
-	buyLinks: BuyLink[];
+	buy_links: BuyLink[];
 }
 
 export interface BuyLink {
