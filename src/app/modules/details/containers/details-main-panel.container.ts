@@ -31,8 +31,6 @@ export class DetailsMainPanel implements OnInit, OnDestroy {
 	) {};
 	ngOnInit():void {
 		this.subscriptions.bookSub = this.store$.select(selectedBookForDetailDisplay).subscribe((book: Book) => book ? this.book$ = book : this.book$ = null);
-
-		console.log(this.book$, 'book')
 	}
 
 	ngOnDestroy(): void {
