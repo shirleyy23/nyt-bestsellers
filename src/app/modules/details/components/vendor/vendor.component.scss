@@ -6,6 +6,9 @@
   color: $font_inverse_colour;
   display: inline-block;
   margin: 0 $spacing_regular $spacing_regular 0;
+  @media screen and (max-width: $small) {
+    font-size: $default_label_font_size;
+  }
   &--amazon {
     background-color: $amazon;
   }
