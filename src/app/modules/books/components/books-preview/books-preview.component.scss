@@ -1,0 +1,45 @@
+@import "styles.scss";
+
+.card {
+  @include Paper();
+  flex: 1 1 auto;
+  height: 400px;
+  flex-wrap: wrap;
+  transition: $base_transition;
+  &__description {
+    flex: 0 0 100%;
+    margin-bottom: $spacing_small_x;
+  }
+  &__image {
+    width: 100px;
+    height: auto;
+    margin-bottom: $spacing_large_x;
+  }
+  &__link {
+    align-self: flex-end;
+    box-shadow: 0 4px 6px -1px $box_shadow_colour_light,
+      0 2px 4px -1px $box_shadow_colour_dark;
+  }
+  &__status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+    padding: $spacing_small_xxx $spacing_small_xx;
+    border-radius: $default_border_radius;
+    background-color: $brown_300;
+    color: $font_inverse_colour;
+    font-size: $status_label_font_size;
+    margin-left: auto;
+  }
+  &__title {
+    align-items: center;
+    flex: 0 0 100%;
+    margin-bottom: $spacing_small_xx;
+  }
+  &:hover,
+  &:focus {
+    box-shadow: 0 10px 15px -3px $box_shadow_colour_light,
+      0 4px 6px -2px $box_shadow_colour_dark;
+  }
+}
