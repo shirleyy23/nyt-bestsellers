@@ -1,0 +1,9 @@
+<a routerLink="{{url}}"
+	[ngClass]="{
+		'link': true,
+		'link--inline': type === constants.type.inline,
+		'link--primary': type === constants.type.primary,
+		'link--secondary': type === constants.type.secondary
+	}"
+	(click)="onClick()"
+	>{{text}}</a>

@@ -1,0 +1,25 @@
+@import "styles.scss";
+
+.link {
+  &--primary {
+    @include Button();
+    background-color: $primary_colour;
+    color: $white;
+    &:hover,
+    &:focus {
+      background-color: $primary_colour_hover;
+      color: $font_inverse_colour;
+    }
+  }
+  &--secondary {
+    @include Button();
+    border: 2px solid $primary_colour;
+    background-color: transparent;
+    color: $primary_colour;
+    &:hover,
+    &:focus {
+      background-color: $primary_colour;
+      color: $font_inverse_colour;
+    }
+  }
+}
