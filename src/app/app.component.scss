@@ -1,0 +1,11 @@
+@import "styles.scss";
+.footer {
+  background-color: $panel_bg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: $default_label_font_size;
+  &__link {
+    margin-right: $spacing_small_x;
+  }
+}
