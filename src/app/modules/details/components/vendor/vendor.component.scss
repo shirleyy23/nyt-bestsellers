@@ -1,0 +1,28 @@
+@import "styles.scss";
+
+.vendor {
+  padding: $spacing_small_xx;
+  border-radius: $default_border_radius;
+  color: $font_inverse_colour;
+  display: inline-block;
+  margin: 0 $spacing_regular $spacing_regular 0;
+  &--amazon {
+    background-color: $amazon;
+  }
+  &--appleBooks {
+    background-color: $appleBooks;
+    color: $grey_1000;
+  }
+  &--barnesAndNobles {
+    background-color: $barnesAndNobles;
+  }
+  &--bookShop {
+    background-color: $bookShop;
+  }
+  &--booksAMillion {
+    background-color: $booksAMillion;
+  }
+  &--indieBound {
+    background-color: $indieBound;
+  }
+}

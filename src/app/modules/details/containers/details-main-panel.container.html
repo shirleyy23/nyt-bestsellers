@@ -1,0 +1,18 @@
+<section *ngIf="book$" class="details-main-panel">
+	<article class="details-main-panel__content">
+		<section class="details-main-panel__content-core">
+			<img src="{{book$.book_image}}" alt="{{book$.title}} book cover" class="details-main-panel__content-core-image">
+			<h1 class="details-main-panel__content-core-title"><span class="details-main-panel__content-core-title-rank">({{book$.rank}})</span>{{book$.title}}</h1>
+			<h2 class="details-main-panel__content-core-author">By: {{book$.author}}</h2>
+			<p class="details-main-panel__content-core-description">{{book$.description}}</p>
+			<section class="details-main-panel__content-core-vendors">
+				<h3 class="details-main-panel__content-core-vendors-title">Available at:</h3>
+				<article class="details-main-panel__content-core-vendors-group">
+					<vendor class="details-main-panel__content-core-vendors-group-item" *ngFor="let vendor of book$.buy_links" [name]="vendor.name" [url]="vendor.url"></vendor>
+				</article>
+			</section>
+			<NavLink class="details-main-panel__content-core-backBtn" [text]="'Back'" [type]="constants.type.secondary" [url]="'/'"></NavLink>
+		</section>
+	</article>
+
+</section>

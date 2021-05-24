@@ -1,0 +1,53 @@
+@import "styles.scss";
+
+.details-main-panel {
+  @include Panel();
+  &__content {
+    @include Paper();
+    flex-wrap: wrap;
+    flex: 0 0 50%;
+    &-core {
+      display: flex;
+      flex-wrap: wrap;
+      flex: 1 1 auto;
+      align-content: flex-start;
+      &-author {
+        flex: 0 0 100%;
+        margin-bottom: $spacing_large_x;
+      }
+      &-backBtn {
+        align-self: flex-end;
+      }
+      &-buyList {
+        margin-bottom: $spacing_large_xx;
+      }
+      &-description {
+        margin-bottom: $spacing_large_xx;
+      }
+      &-image {
+        width: 20vw;
+        height: auto;
+        margin-bottom: $spacing_large_x;
+      }
+      &-title {
+        flex: 0 0 100%;
+        margin-bottom: $spacing_large_x;
+        &-rank {
+          margin-right: $spacing_small_x;
+        }
+      }
+      &-vendors {
+        margin-bottom: $spacing_large_xx;
+        &-title {
+          margin-bottom: $spacing_small_x;
+        }
+        &-group {
+          &-item {
+            margin-right: $spacing_small_x;
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}
