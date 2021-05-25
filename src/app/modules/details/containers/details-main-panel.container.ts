@@ -60,7 +60,7 @@ export class DetailsMainPanel implements OnInit, OnDestroy {
 		const rawAmount = lastRank ? currentRank - lastRank : 0;
 		const type = rawAmount === 0 || !lastRank ? this.constants.rankingTypes.neutral : rawAmount < 0 ? this.constants.rankingTypes.positive : this.constants.rankingTypes.negative;
 		const icon = type === this.constants.rankingTypes.positive ? faChevronUp : type === this.constants.rankingTypes.negative ? faChevronDown : null;
-		const parsedAmount = rawAmount === 0 ? '-' : `${rawAmount}`;
+		const parsedAmount = rawAmount === 0 ? '-' : `${Math.abs(rawAmount)}`;
 		return {
 			amount: parsedAmount,
 			type,

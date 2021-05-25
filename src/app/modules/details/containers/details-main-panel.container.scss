@@ -73,8 +73,7 @@
               background-color: $color_negative;
             }
             &--neutral {
-              background-color: $white;
-              color: $default_font_colour;
+              color: $font_inverse_colour;
             }
           }
         }
