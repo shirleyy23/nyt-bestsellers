@@ -1,4 +1,6 @@
 import { Subscription } from "rxjs";
+import { RankingTypes } from 'Core/models/frontend/frontend-constants';
+import { IconDefinition } from "@fortawesome/fontawesome-common-types";
 
 export interface Book {
 	rank: number;
@@ -27,4 +29,10 @@ export interface CoreState {
 
 export interface StoredSubscriptions {
 	[key: string]: Subscription;
+}
+
+export interface ChangeInRankingsBlock {
+	amount: string;
+	type: RankingTypes,
+	icon: IconDefinition | null
 }

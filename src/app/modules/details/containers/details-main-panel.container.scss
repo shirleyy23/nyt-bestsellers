@@ -6,6 +6,12 @@
     @include Paper();
     flex-wrap: wrap;
     flex: 0 0 50%;
+    @media screen and (max-width: $medium) {
+      flex: 0 0 70%;
+    }
+    @media screen and (max-width: $small) {
+      flex: 0 0 90%;
+    }
     &-core {
       display: flex;
       flex-wrap: wrap;
@@ -14,6 +20,12 @@
       &-author {
         flex: 0 0 100%;
         margin-bottom: $spacing_large_x;
+        @media screen and (max-width: $medium) {
+          font-size: $font_size_medium;
+        }
+        @media screen and (max-width: $small) {
+          font-size: $font_size_regular;
+        }
       }
       &-backBtn {
         align-self: flex-end;
@@ -23,16 +35,68 @@
       }
       &-description {
         margin-bottom: $spacing_large_xx;
+        @media screen and (max-width: $small) {
+          font-size: $default_label_font_size;
+        }
       }
       &-image {
         width: 20vw;
         height: auto;
         margin-bottom: $spacing_large_x;
+        @media screen and (max-width: $medium) {
+          width: 30vw;
+        }
+        @media screen and (max-width: $small) {
+          width: 40vw;
+        }
+      }
+      &-metrics {
+        background-color: $blue_black_300;
+        color: $font_inverse_colour;
+        padding: $spacing_small_x $spacing_regular;
+        margin-bottom: $spacing_large_x;
+        margin-left: auto;
+        display: flex;
+        flex-direction: column;
+        border-radius: $default_border_radius;
+        align-self: flex-start;
+        &-rankingChange {
+          margin-bottom: $spacing_regular;
+          &-amount {
+            color: $font_inverse_colour;
+            padding: $spacing_small_xxx;
+            border-radius: $default_border_radius;
+            &--positive {
+              background-color: $color_positive;
+            }
+            &--negative {
+              background-color: $color_negative;
+            }
+            &--neutral {
+              color: $font_inverse_colour;
+            }
+          }
+        }
+        @media screen and (max-width: $small) {
+          margin-left: 0;
+        }
       }
       &-title {
         flex: 0 0 100%;
         margin-bottom: $spacing_large_x;
+        @media screen and (max-width: $medium) {
+          font-size: $font_size_large;
+        }
+        @media screen and (max-width: $small) {
+          font-size: $font_size_medium;
+        }
         &-rank {
+          @media screen and (max-width: $medium) {
+            font-size: $font_size_large;
+          }
+          @media screen and (max-width: $small) {
+            font-size: $font_size_medium;
+          }
           margin-right: $spacing_small_x;
         }
       }
@@ -40,6 +104,12 @@
         margin-bottom: $spacing_large_xx;
         &-title {
           margin-bottom: $spacing_small_x;
+          @media screen and (max-width: $medium) {
+            font-size: $font_size_medium;
+          }
+          @media screen and (max-width: $small) {
+            font-size: $font_size_regular;
+          }
         }
         &-group {
           &-item {

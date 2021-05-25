@@ -19,6 +19,9 @@
   padding: $spacing_large_x;
   box-shadow: 0 4px 6px -1px $box_shadow_colour_light,
     0 2px 4px -1px $box_shadow_colour_dark;
+  @media screen and (max-width: $small) {
+    font-size: $default_label_font_size;
+  }
 }
 
 @mixin Panel {

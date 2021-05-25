@@ -22,7 +22,8 @@ export class BooksPreview implements OnInit {
 			inline: Links.inline,
 			primary: Buttons.primary,
 			secondary: Buttons.secondary
-		}
+		},
+		previewTextLimit: 100
 	}
 	constructor(
 		private store$: Store<any>
@@ -32,7 +33,7 @@ export class BooksPreview implements OnInit {
 		if (this.bookDetails) {
 			this.url = this.parseTitleForURL(this.bookDetails.title);
 			this.isNew = !this.bookDetails.rank_last_week;
-			this.previewDescription = this.bookDetails.description.split('.')[0];
+			this.previewDescription = this.formatPreviewText(this.bookDetails.description);
 		}
 	}
 	public sendBookDataToDetails():void {
@@ -43,5 +44,9 @@ export class BooksPreview implements OnInit {
 		const urlTitle = title.split(' ').join('-').toLowerCase();
 		const fullURL = `details/${urlTitle}`;
 		return fullURL;
+	}
+
+	private formatPreviewText(value: string): string {
+		return  value.length > this.constants.previewTextLimit ? `${value.substring(0,100)}...` : value;
 	}
 }

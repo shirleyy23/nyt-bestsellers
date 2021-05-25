@@ -2,6 +2,21 @@
 	<article class="details-main-panel__content">
 		<section class="details-main-panel__content-core">
 			<img src="{{book$.book_image}}" alt="{{book$.title}} book cover" class="details-main-panel__content-core-image">
+			<article class="details-main-panel__content-core-metrics">
+				<p class="details-main-panel__content-core-metrics-rankingsChange">Change in Rankings: 
+					<span
+						[ngClass]="{
+							'details-main-panel__content-core-metrics-rankingChange-amount': true,
+							'details-main-panel__content-core-metrics-rankingChange-amount--positive': rankData.type === this.constants.rankingTypes.positive,
+							'details-main-panel__content-core-metrics-rankingChange-amount--negative': rankData.type === this.constants.rankingTypes.negative,
+							'details-main-panel__content-core-metrics-rankingChange-amount--neutral': rankData.type === this.constants.rankingTypes.neutral
+						}">
+						<fa-icon *ngIf="rankData.icon" [icon]="rankData.icon"></fa-icon>
+						{{rankData.amount}}
+					</span>
+				</p>
+				<p class="details-main-panel__content-core-metrics-weeks">Weeks on List: {{book$.weeks_on_list}}</p>
+			</article>
 			<h1 class="details-main-panel__content-core-title"><span class="details-main-panel__content-core-title-rank">({{book$.rank}})</span>{{book$.title}}</h1>
 			<h2 class="details-main-panel__content-core-author">By: {{book$.author}}</h2>
 			<p class="details-main-panel__content-core-description">{{book$.description}}</p>
@@ -11,7 +26,7 @@
 					<vendor class="details-main-panel__content-core-vendors-group-item" *ngFor="let vendor of book$.buy_links" [name]="vendor.name" [url]="vendor.url"></vendor>
 				</article>
 			</section>
-			<NavLink class="details-main-panel__content-core-backBtn" [text]="'Back'" [type]="constants.type.secondary" [url]="'/'"></NavLink>
+			<NavLink class="details-main-panel__content-core-backBtn" [text]="'Back'" [type]="constants.linkTypes.secondary" [url]="'/'"></NavLink>
 		</section>
 	</article>
 

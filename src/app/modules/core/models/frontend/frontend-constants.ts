@@ -17,3 +17,10 @@ export enum Vendors {
 	bookShop = 'Bookshop',
 	indieBound = 'IndieBound'
 }
+
+export enum RankingTypes {
+	positive = 'positive',
+	negative = 'negative',
+	neutral = 'neutral'
+
+}

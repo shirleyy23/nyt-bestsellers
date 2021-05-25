@@ -18,8 +18,16 @@ $panel_bg: $blue_light_100;
 $box_shadow_colour_light: rgba($blue_black_100, 0.1);
 $box_shadow_colour_dark: rgba($blue_black_200, 0.5);
 $divider_colour: $grey_200;
+$color_positive: $dark_green_100;
+$color_negative: $dark_red_300;
 
 /*Animations*/
 $base_transition: 0.2s ease-in all;
 
+/*Border Radius*/
 $default_border_radius: $spacing_small_xxx;
+
+/*Media Queries*/
+$small: 575px;
+$medium: 767px;
+$large: 991px;
