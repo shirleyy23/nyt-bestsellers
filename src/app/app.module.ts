@@ -9,8 +9,6 @@ import { StoreModule } from '@ngrx/store';
 import { AppReducer } from './app.reducer';
 import { BooksModule } from 'App/modules/books/books.module';
 import { DetailsModule } from 'Details/details.module';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
 @NgModule({
   declarations: [
     AppComponent
@@ -23,7 +21,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     GraphQLModule,
     BooksModule,
     DetailsModule,
-    FontAwesomeModule,
     StoreModule.forRoot(AppReducer)
   ],
   providers: [],
