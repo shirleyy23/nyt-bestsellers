@@ -46,7 +46,6 @@ export class DetailsMainPanel implements OnInit, OnDestroy {
 		this.subscriptions.bookSub = this.store$.select(selectedBookForDetailDisplay).subscribe((book: Book) => book ? this.book$ = book : this.book$ = null);
 		if (this.book$) {
 			this.rankData = this.getRankingData(this.book$.rank, this.book$.rank_last_week);
-			console.log(this.rankData, this.book$)
 		}
 	}
 
