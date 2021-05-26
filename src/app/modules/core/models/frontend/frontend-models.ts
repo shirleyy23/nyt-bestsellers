@@ -1,6 +1,7 @@
 import { Subscription } from "rxjs";
 import { RankingTypes } from 'Core/models/frontend/frontend-constants';
 import { IconDefinition } from "@fortawesome/fontawesome-common-types";
+import { FullListTypes } from "App/modules/graphql/models/models";
 
 export interface Book {
 	rank: number;
@@ -30,9 +31,16 @@ export interface CoreState {
 export interface StoredSubscriptions {
 	[key: string]: Subscription;
 }
-
 export interface ChangeInRankingsBlock {
 	amount: string;
 	type: RankingTypes,
 	icon: IconDefinition | null
+}
+
+export type DistinctBookListDataBlock = {
+	[distinctList in FullListTypes]: Book[]
+}
+
+export interface FullBookListDataBlock extends DistinctBookListDataBlock {
+	selectedList: Book[]
 }

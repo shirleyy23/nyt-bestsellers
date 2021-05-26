@@ -1,7 +1,7 @@
 <section class="books-main-panel">
 	<ul class="books-main-panel__list">
-		<li class="books-main-panel__list-item" *ngFor="let result of results">
-			<books-preview [book]="result"></books-preview>
+		<li class="books-main-panel__list-item" *ngFor="let book of bookListData.selectedList">
+			<books-preview [book]="book"></books-preview>
 		</li>
 	</ul>
 </section>
