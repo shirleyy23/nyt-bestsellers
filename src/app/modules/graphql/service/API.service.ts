@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import { FullListResponse, FullListTypes } from 'GraphQL/models/models';
-import { Book, FullBookListDataBlock } from 'Core/models/frontend/frontend-models';
+import { Book, FullBookListDataBlock } from 'Core/models/models';
 import { DocumentNode } from 'graphql';
 import { Subscription } from 'rxjs';
 @Injectable({

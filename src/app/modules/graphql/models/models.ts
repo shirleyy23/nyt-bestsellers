@@ -1,4 +1,4 @@
-import { Book } from 'Core/models/frontend/frontend-models';
+import { Book } from 'Core/models/models';
 
 export enum FullListTypes {
   combinedNonFictionList = 'combinedNonFictionList',

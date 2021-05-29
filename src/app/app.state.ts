@@ -1,4 +1,4 @@
-import { CoreState } from 'Core/models/frontend/frontend-models';
+import { CoreState } from 'Core/models/models';
 
 export interface AppState {
 	coreState: CoreState

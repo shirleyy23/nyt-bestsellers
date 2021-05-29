@@ -1,11 +1,11 @@
 import { Component, OnInit, OnDestroy, ViewEncapsulation} from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { selectedBookForDetailDisplay } from 'Core/selectors/core.selectors'; 
-import { Book, StoredSubscriptions } from 'Core/models/frontend/frontend-models';
+import { Book, StoredSubscriptions } from 'Core/models/models';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute, Params } from '@angular/router';
-import { Buttons, Links, RankingTypes } from 'Core/models/frontend/frontend-constants';
-import { ChangeInRankingsBlock } from 'Core/models/frontend/frontend-models';
+import { Buttons, Links, RankingTypes } from 'Core/models/constants';
+import { ChangeInRankingsBlock } from 'Core/models/models';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 @Component({

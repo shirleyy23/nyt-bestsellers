@@ -1,5 +1,5 @@
 import { Subscription } from "rxjs";
-import { RankingTypes } from 'Core/models/frontend/frontend-constants';
+import { RankingTypes } from 'Core/models/constants';
 import { IconDefinition } from "@fortawesome/fontawesome-common-types";
 import { FullListTypes } from "App/modules/graphql/models/models";
 

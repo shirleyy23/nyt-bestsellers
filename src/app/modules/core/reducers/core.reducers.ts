@@ -2,7 +2,7 @@ import { createReducer, on, Action } from '@ngrx/store';
 
 import { sendBook } from 'Core/actions/core.actions';
 
-import { CoreState } from 'Core/models/frontend/frontend-models';
+import { CoreState } from 'Core/models/models';
 
 export const initialState: CoreState = {
 	selectedBook: {

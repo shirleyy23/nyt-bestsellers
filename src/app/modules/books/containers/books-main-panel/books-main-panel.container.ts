@@ -3,7 +3,7 @@ import { combinedNonFictionQuery, combinedFictionListQuery } from 'GraphQL/query
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { sendBook } from 'Core/actions/core.actions';
-import { Book , StoredSubscriptions, FullBookListDataBlock} from 'Core/models/frontend/frontend-models';
+import { Book , StoredSubscriptions, FullBookListDataBlock} from 'Core/models/models';
 import { APIService } from 'GraphQL/service/API.service';
 import { FullListTypes } from 'App/modules/graphql/models/models';
 import { Subscription } from 'rxjs';
