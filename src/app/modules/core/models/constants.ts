@@ -22,5 +22,4 @@ export enum RankingTypes {
 	positive = 'positive',
 	negative = 'negative',
 	neutral = 'neutral'
-
 }
