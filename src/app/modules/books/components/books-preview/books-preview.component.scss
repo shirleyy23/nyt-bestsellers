@@ -5,7 +5,7 @@
   flex: 1 1 auto;
   height: 400px;
   flex-wrap: wrap;
-  transition: $base_transition;
+  transition: $default_transition;
   &__description {
     flex: 0 0 100%;
     margin-bottom: $spacing_small_x;
