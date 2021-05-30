@@ -9,7 +9,7 @@
     align-items: center;
     flex-wrap: wrap;
     &-item {
-      flex: 0 0 27.5%;
+      flex: 0 0 25%;
       display: flex;
       margin: 0 $spacing_regular $spacing_regular 0;
       & > books-preview {
