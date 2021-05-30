@@ -18,8 +18,10 @@ $panel_bg: $blue_light_100;
 $box_shadow_colour_light: rgba($blue_black_100, 0.1);
 $box_shadow_colour_dark: rgba($blue_black_200, 0.5);
 $divider_colour: $grey_200;
-$color_positive: $dark_green_100;
-$color_negative: $dark_red_300;
+$color_positive: $green_dark_100;
+$color_negative: $red_dark_100;
+$color_success: $green_dark_500;
+$color_cancel: $red_dark_500;
 
 /*Animations*/
 $default_transition: 0.2s ease-in all;
