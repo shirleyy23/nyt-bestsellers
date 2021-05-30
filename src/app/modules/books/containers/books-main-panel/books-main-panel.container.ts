@@ -8,6 +8,7 @@ import { APIService } from 'GraphQL/service/API.service';
 import { FullListTypes } from 'App/modules/graphql/models/models';
 import { Subscription } from 'rxjs';
 import { faPlus, faTimes, faBookOpen } from '@fortawesome/free-solid-svg-icons';
+import { LOADING_DATA, LOADING_DATA_ITEM_LIMIT } from 'Core/models/constants';
 @Component({
 	selector: 'books-main-panel',
 	templateUrl: './books-main-panel.container.html',
@@ -23,6 +24,10 @@ export class BooksMainPanel implements OnInit, OnDestroy {
 			main: faBookOpen,
 			expand: faPlus,
 			collapse: faTimes,
+		},
+		skeleton: {
+			exampleData: LOADING_DATA,
+			itemLimit: LOADING_DATA_ITEM_LIMIT
 		}
 	}
 	subscriptions: StoredSubscriptions = {

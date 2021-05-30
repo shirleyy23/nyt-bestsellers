@@ -1,22 +1,19 @@
 import { Book } from 'Core/models/models';
 
-export enum Links {
-	inline,
+export const LOADING_DATA: Book = {
+	rank: 1,
+	rank_last_week: 1,
+	weeks_on_list: 1,
+	publisher: 'Test publisher',
+	description: 'Test description',
+	title: 'Test Title',
+	author: 'Test Author',
+	book_image: 'test.jpg',
+	book_image_width: 300,
+	book_image_height: 500,
+	book_review_link: '',
+	first_chapter_link: '',
+	buy_links: [],
 }
 
-export type LinkType = Buttons | Links;
-
-export enum Vendors {
-	amazon = 'Amazon',
-	appleBooks = 'Apple Books',
-	barnesAndNoble = 'Barnes and Noble',
-	booksAMillion = 'Books-A-Million',
-	bookShop = 'Bookshop',
-	indieBound = 'IndieBound'
-}
-
-export enum RankingTypes {
-	positive = 'positive',
-	negative = 'negative',
-	neutral = 'neutral'
-}
+export const LOADING_DATA_ITEM_LIMIT = 6;
