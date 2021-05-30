@@ -18,16 +18,29 @@ export interface Book {
 	first_chapter_link: string;
 	buy_links: BuyLink[];
 }
-
 export interface BuyLink {
 	name: string;
 	url: string;
 }
 
+export enum BooklistTypes {
+	nonFiction = 'Non-Fiction',
+	fiction = 'Fiction'
+}
+
+export interface BookPanelState {
+	bookList: FullBookListDataBlock;
+	switch: {
+		isExpanded: boolean;
+		selectedList: BooklistTypes;
+		alternateList: BooklistTypes;
+		btnIcon: IconDefinition;
+	}
+}
+
 export interface CoreState {
 	selectedBook: Book;
 }
-
 export interface StoredSubscriptions {
 	[key: string]: Subscription;
 }

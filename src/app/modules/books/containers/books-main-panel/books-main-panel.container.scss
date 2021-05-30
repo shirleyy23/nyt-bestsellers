@@ -26,4 +26,91 @@
       }
     }
   }
+  &__switch {
+    @include BoxShadow();
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 3.5rem;
+    padding: $spacing_small_xx;
+    background-color: $blue_black_300;
+    color: $font_inverse_colour;
+    transition: $default_transition;
+    border-radius: 0 0 $spacing_small_xxx $spacing_small_xxx;
+    &-helperText {
+      font-size: $font_size_small_x;
+      margin-bottom: $spacing_small_xxx;
+    }
+    &-btn {
+      @include Button();
+      &--toggleSwitch {
+        position: absolute;
+        bottom: -$spacing_small_xx;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: $spacing_small_xxx $spacing_small_xx;
+      }
+      &--expand {
+        background-color: $color_success;
+      }
+      &--collapse {
+        background-color: $color_cancel;
+      }
+    }
+    &-icon {
+      display: flex;
+      color: $font_inverse_colour;
+      &--mainIcon {
+        margin-bottom: $spacing_small_xx;
+      }
+    }
+    &-utility {
+      flex-direction: column;
+      transition: $default_transition;
+      overflow: hidden;
+      height: 0;
+      margin-bottom: $spacing_small_xx;
+      &-altList {
+        color: $font_inverse_colour;
+        font-size: $default_label_font_size;
+        text-align: center;
+      }
+      &-btn {
+        @include Button();
+        font-size: $default_label_font_size;
+        padding: $spacing_small_xx $spacing_small_xxx;
+        margin-bottom: $spacing_small_xxx;
+        background-color: $primary_colour;
+        color: $font_inverse_colour;
+        &:hover,
+        &:focus {
+          background-color: $primary_colour_hover;
+        }
+      }
+      &-divider {
+        margin: 0 0 $spacing_regular;
+      }
+      &--selected {
+        height: 6.25rem;
+      }
+    }
+    &-selectedList {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: $default_label_font_size;
+      margin-bottom: $spacing_regular;
+      &-list {
+        @include Label($white);
+        padding: 0.15rem $spacing_small_xxx;
+        background-color: $grey_1000;
+        color: $font_inverse_colour;
+      }
+    }
+  }
 }
