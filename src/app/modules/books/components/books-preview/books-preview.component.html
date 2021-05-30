@@ -1,11 +1,21 @@
-<section
-	[ngClass]="{
-		'book-preview': true,
-		'book-preview--loadingState': isLoading
-	}">
-	<img src="{{bookDetails.book_image}}" alt="{{bookDetails.title}} book cover" class="book-preview__image">
-	<p *ngIf="isNew" class="book-preview__status">NEW</p>
-	<h3 class="book-preview__title">({{bookDetails.rank}}) {{ bookDetails.title}}</h3>
-	<p class="book-preview__description">{{previewDescription}}</p>
-	<NavLink class="book-preview__link" [text]="'View'" [type]="constants.linkTypes.primary" [url]="url" (clickEvent)="sendBookDataToDetails()"></NavLink>
+<section class="book-preview">
+	<img *ngIf="!state.loadingState; else skeletonImage" src="{{state.bookDetails.book_image}}" alt="{{state.bookDetails.title}} book cover" class="book-preview__image">
+	<ng-template #skeletonImage>
+		<section class="book-preview__skeletonImage">
+		</section>
+	</ng-template>
+	<p *ngIf="state.isNew && !state.loadingState" class="book-preview__status">NEW</p>
+	<h3 class="book-preview__title" *ngIf="!state.loadingState; else skeletonTitle">({{state.bookDetails.rank}}) {{ state.bookDetails.title}}</h3>
+	<ng-template #skeletonTitle>
+		<h3 class="book-preview__skeletonTitle"></h3>
+	</ng-template>
+	<p class="book-preview__description" *ngIf="!state.loadingState; else skeletonDescription">{{state.previewDescription}}</p>
+	<ng-template #skeletonDescription>
+		<p class="book-preview__skeletonDescription book-preview__skeletonDescription--lineOne"></p>
+		<p class="book-preview__skeletonDescription book-preview__skeletonDescription--lineTwo"></p>
+	</ng-template>
+	<NavLink *ngIf="!state.loadingState; else skeletonButton" class="book-preview__link" [text]="'View'" [type]="constants.linkTypes.primary" [url]="state.url" (clickEvent)="sendBookDataToDetails()"></NavLink>
+	<ng-template #skeletonButton>
+		<button class="book-preview__skeletonBtn"></button>
+	</ng-template>
 </section>

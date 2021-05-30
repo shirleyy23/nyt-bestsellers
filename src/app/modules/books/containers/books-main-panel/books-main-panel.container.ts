@@ -42,6 +42,7 @@ export class BooksMainPanel implements OnInit, OnDestroy {
 	) {};
 
 	ngOnInit() {
+		this.state.bookList.selectedList = this.createLoadingUI(this.constants.skeleton.itemLimit, this.constants.skeleton.exampleData);
 		this.subscriptions.combinedFictionListSub = this.apiService.getFullListData(combinedFictionListQuery, this.constants.queryTypes.combinedFictionList, this.state.bookList);
 	}
 
@@ -91,5 +92,13 @@ export class BooksMainPanel implements OnInit, OnDestroy {
 				fetchedData: false
 			}
 		}
+	}
+
+	private createLoadingUI(limit: number, exampleData: Book): Book[] {
+		const skeletonData: Book[] = [];
+		for (let i = 0; i < limit; i++) {
+			skeletonData.push(exampleData)
+		}
+		return skeletonData;
 	}
 }
