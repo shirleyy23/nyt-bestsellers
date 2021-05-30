@@ -29,7 +29,7 @@
   &__switch {
     @include BoxShadow();
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;

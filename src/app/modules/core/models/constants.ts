@@ -17,3 +17,5 @@ export const LOADING_DATA: Book = {
 }
 
 export const LOADING_DATA_ITEM_LIMIT = 6;
+
+export const LOADING_DATA_DELAY = 2000;

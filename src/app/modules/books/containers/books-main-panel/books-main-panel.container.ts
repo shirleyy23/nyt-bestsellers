@@ -8,7 +8,7 @@ import { APIService } from 'GraphQL/service/API.service';
 import { FullListTypes } from 'App/modules/graphql/models/models';
 import { Subscription } from 'rxjs';
 import { faPlus, faTimes, faBookOpen } from '@fortawesome/free-solid-svg-icons';
-import { LOADING_DATA, LOADING_DATA_ITEM_LIMIT } from 'Core/models/constants';
+import { LOADING_DATA, LOADING_DATA_ITEM_LIMIT, LOADING_DATA_DELAY } from 'Core/models/constants';
 @Component({
 	selector: 'books-main-panel',
 	templateUrl: './books-main-panel.container.html',
@@ -27,7 +27,8 @@ export class BooksMainPanel implements OnInit, OnDestroy {
 		},
 		skeleton: {
 			exampleData: LOADING_DATA,
-			itemLimit: LOADING_DATA_ITEM_LIMIT
+			itemLimit: LOADING_DATA_ITEM_LIMIT,
+			delay: LOADING_DATA_DELAY
 		}
 	}
 	subscriptions: StoredSubscriptions = {
@@ -43,7 +44,9 @@ export class BooksMainPanel implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.state.bookList.selectedList = this.createLoadingUI(this.constants.skeleton.itemLimit, this.constants.skeleton.exampleData);
-		this.subscriptions.combinedFictionListSub = this.apiService.getFullListData(combinedFictionListQuery, this.constants.queryTypes.combinedFictionList, this.state.bookList);
+		setTimeout(() => {
+			this.subscriptions.combinedFictionListSub = this.apiService.getFullListData(combinedFictionListQuery, this.constants.queryTypes.combinedFictionList, this.state.bookList, this.state.api);
+		}, this.constants.skeleton.delay)
 	}
 
 	ngOnDestroy() {
@@ -66,10 +69,14 @@ export class BooksMainPanel implements OnInit, OnDestroy {
 	public onClickSwitchList(altList: BooklistTypes) {
 		const bookListData = altList === this.constants.booklistTypes.nonFiction ? this.constants.queryTypes.combinedNonFictionList : this.constants.queryTypes.combinedFictionList;
 		if (this.state.bookList[bookListData].length > 0) {
-			this.state.bookList.selectedList = this.state.bookList[bookListData];
+			this.state.api.isLoading = true;
+			setTimeout(() => {
+				this.state.bookList.selectedList = this.state.bookList[bookListData];
+				this.state.api.isLoading = false;
+			}, 2000)
 		} else {
 			const query = bookListData === this.constants.queryTypes.combinedNonFictionList ? combinedNonFictionQuery : combinedFictionListQuery;
-			this.apiService.getFullListData(query, bookListData, this.state.bookList);
+			this.apiService.getFullListData(query, bookListData, this.state.bookList, this.state.api);
 		}
 		this.state.switch.selectedList = altList;
 		this.state.switch.alternateList = altList === this.constants.booklistTypes.nonFiction ? this.constants.booklistTypes.fiction : this.constants.booklistTypes.nonFiction;
@@ -89,6 +96,7 @@ export class BooksMainPanel implements OnInit, OnDestroy {
 				btnIcon: this.constants.icons.expand
 			},
 			api: {
+				isLoading: true,
 				fetchedData: false
 			}
 		}

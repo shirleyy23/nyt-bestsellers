@@ -35,9 +35,12 @@ export interface BookPanelState {
 		alternateList: BooklistTypes;
 		btnIcon: IconDefinition;
 	},
-	api: {
-		fetchedData: boolean;
-	}
+	api: DataFetchingBlock;
+}
+
+export interface DataFetchingBlock {
+	isLoading: boolean;
+	fetchedData: boolean;
 }
 
 export interface BookPreviewState {
