@@ -1,11 +1,12 @@
 @import "styles.scss";
 
-.card {
+.book-preview {
+  $blockName: &;
   @include Paper();
   flex: 1 1 auto;
   height: 400px;
   flex-wrap: wrap;
-  transition: $base_transition;
+  transition: $default_transition;
   &__description {
     flex: 0 0 100%;
     margin-bottom: $spacing_small_x;
@@ -17,29 +18,55 @@
   }
   &__link {
     align-self: flex-end;
-    box-shadow: 0 4px 6px -1px $box_shadow_colour_light,
-      0 2px 4px -1px $box_shadow_colour_dark;
   }
   &__status {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-self: flex-start;
-    padding: $spacing_small_xxx $spacing_small_xx;
-    border-radius: $default_border_radius;
-    background-color: $brown_300;
-    color: $font_inverse_colour;
-    font-size: $default_label_font_size;
+    @include Label($brown_300);
     margin-left: auto;
+  }
+  &__skeletonDescription,
+  &__skeletonImage,
+  &__skeletonTitle,
+  &__skeletonBtn {
+    position: relative;
+    background-color: $skeleton_color;
+    &:after {
+      @include SkeletonAnimation();
+      content: "";
+      top: 0;
+      background: rgba(255, 255, 225, 0.1);
+      transform: translateX(100%);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 1;
+      animation: slide 1s infinite;
+    }
+  }
+  &__skeletonDescription,
+  &__skeletonTitle {
+    height: 1rem;
+  }
+  &__skeletonBtn {
+    flex-basis: 30%;
+    border: none;
+    border-radius: $default_border_radius;
+  }
+  &__skeletonDescription {
+    flex-basis: 100%;
+  }
+  &__skeletonImage {
+    width: 100px;
+    height: 150px;
+  }
+  &__skeletonTitle {
+    flex: 0 0 70%;
+    @media screen and (max-width: $large) {
+      flex-basis: 85%;
+    }
   }
   &__title {
     align-items: center;
     flex: 0 0 100%;
     margin-bottom: $spacing_small_xx;
-  }
-  &:hover,
-  &:focus {
-    box-shadow: 0 10px 15px -3px $box_shadow_colour_light,
-      0 4px 6px -2px $box_shadow_colour_dark;
   }
 }

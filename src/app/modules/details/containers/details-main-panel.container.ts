@@ -1,11 +1,10 @@
 import { Component, OnInit, OnDestroy, ViewEncapsulation} from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { selectedBookForDetailDisplay } from 'Core/selectors/core.selectors'; 
-import { Book, StoredSubscriptions } from 'Core/models/frontend/frontend-models';
+import { Book, StoredSubscriptions } from 'Core/models/models';
 import { Subscription } from 'rxjs';
-import { ActivatedRoute, Params } from '@angular/router';
-import { Buttons, Links, RankingTypes } from 'Core/models/frontend/frontend-constants';
-import { ChangeInRankingsBlock } from 'Core/models/frontend/frontend-models';
+import { ActivatedRoute } from '@angular/router';
+import { ChangeInRankingsBlock, Buttons, Links, RankingTypes } from 'Core/models/models';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -42,15 +41,14 @@ export class DetailsMainPanel implements OnInit, OnDestroy {
 		private route: ActivatedRoute
 	) {};
 
-	ngOnInit():void {
+	public ngOnInit():void {
 		this.subscriptions.bookSub = this.store$.select(selectedBookForDetailDisplay).subscribe((book: Book) => book ? this.book$ = book : this.book$ = null);
 		if (this.book$) {
 			this.rankData = this.getRankingData(this.book$.rank, this.book$.rank_last_week);
-			console.log(this.rankData, this.book$)
 		}
 	}
 
-	ngOnDestroy(): void {
+	public ngOnDestroy(): void {
 		for (let eachSub in this.subscriptions) {
 			this.subscriptions[eachSub].unsubscribe();
 		}

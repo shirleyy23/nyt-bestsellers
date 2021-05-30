@@ -1,7 +1,38 @@
-<section class="books-main-panel">
+<section
+	[ngClass]="{
+		'books-main-panel': true,
+		'books-main-panel--loadingState': state.api.isLoading
+	}">
+	<section class="books-main-panel__switch">
+		<fa-icon class="books-main-panel__switch-icon books-main-panel__switch-icon--mainIcon" size="2x"[icon]="constants.icons.main"></fa-icon>
+		<p class="books-main-panel__switch-helperText">viewing:</p>
+		<p class="books-main-panel__switch-selectedList">
+			<span class="books-main-panel__switch-selectedList-list">{{state.switch.selectedList}}</span>
+		</p>
+		<section
+			[ngClass]="{
+				'books-main-panel__switch-utility': true,
+				'books-main-panel__switch-utility--selected': state.switch.isExpanded
+			}">
+			<hr class="books-main-panel__switch-utility-divider">
+			<button class="books-main-panel__switch-utility-btn books-main-panel__switch-utility-btn--selectAltList" (click)="onClickSwitchList(state.switch.alternateList)">
+				Switch
+			</button>
+			<p class="books-main-panel__switch-utility-altList">{{state.switch.alternateList}}</p>
+		</section>
+		<button
+		[ngClass]="{
+			'books-main-panel__switch-btn': true,
+			'books-main-panel__switch-btn--toggleSwitch': true,'books-main-panel__switch-btn--expand': !state.switch.isExpanded,
+			'books-main-panel__switch-btn--collapse': state.switch.isExpanded
+		}"
+		(click)="onToggleSwitch()">
+			<fa-icon class="books-main-panel__switch-icon books-main-panel__switch-icon--expandIcon" [icon]="state.switch.btnIcon"></fa-icon>
+		</button>
+	</section>
 	<ul class="books-main-panel__list">
-		<li class="books-main-panel__list-item" *ngFor="let result of results">
-			<books-preview [book]="result"></books-preview>
+		<li class="books-main-panel__list-item" *ngFor="let book of state.bookList.selectedList">
+			<books-preview [book]="book" [loadingState]="state.api.isLoading"></books-preview>
 		</li>
 	</ul>
 </section>

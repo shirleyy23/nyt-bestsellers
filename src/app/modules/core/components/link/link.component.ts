@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter, ViewEncapsulation} from '@angular/core';
-import { LinkType, Buttons, Links } from 'Core/models/frontend/frontend-constants';
+import { LinkType, Buttons, Links } from 'Core/models/models';
 
 
 @Component({
@@ -23,7 +23,7 @@ export class Link {
 	@Output() clickEvent = new EventEmitter<any>();
 	constructor() {};
 
-	public onClick() {
+	public onClick(): void {
 		!!this.clickEvent && this.clickEvent.emit()
 	}
 }

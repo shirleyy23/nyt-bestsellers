@@ -5,10 +5,11 @@
 /*Text*/
 $default_font_size: $font_size_regular;
 $default_font_family: $roboto_400;
-$default_font_colour: $grey_800;
+$default_font_colour: $grey_700;
 $heading_font_family: $playfair_display_500;
-$heading_font_colour: $grey_1000;
+$heading_font_colour: $grey_900;
 $default_label_font_size: $font_size_small;
+$default_helper_text_font_size: $font_size_small_x;
 
 /*Colours*/
 $primary_colour: $blue_dark_100;
@@ -18,11 +19,14 @@ $panel_bg: $blue_light_100;
 $box_shadow_colour_light: rgba($blue_black_100, 0.1);
 $box_shadow_colour_dark: rgba($blue_black_200, 0.5);
 $divider_colour: $grey_200;
-$color_positive: $dark_green_100;
-$color_negative: $dark_red_300;
+$color_positive: $green_dark_100;
+$color_negative: $red_dark_100;
+$color_success: $green_dark_500;
+$color_cancel: $red_dark_500;
+$skeleton_color: $grey_400;
 
 /*Animations*/
-$base_transition: 0.2s ease-in all;
+$default_transition: 0.2s ease-in all;
 
 /*Border Radius*/
 $default_border_radius: $spacing_small_xxx;
