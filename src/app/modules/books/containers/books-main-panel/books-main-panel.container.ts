@@ -42,31 +42,31 @@ export class BooksMainPanel implements OnInit, OnDestroy {
 		private apiService: APIService
 	) {};
 
-	ngOnInit() {
+	public ngOnInit(): void {
 		this.state.bookList.selectedList = this.createLoadingUI(this.constants.skeleton.itemLimit, this.constants.skeleton.exampleData);
 		setTimeout(() => {
 			this.subscriptions.combinedFictionListSub = this.apiService.getFullListData(combinedFictionListQuery, this.constants.queryTypes.combinedFictionList, this.state.bookList, this.state.api);
 		}, this.constants.skeleton.delay)
 	}
 
-	ngOnDestroy() {
+	public ngOnDestroy(): void {
 		for (let eachSub in this.subscriptions) {
 			this.subscriptions[eachSub].unsubscribe();
 		}
 	}
 
-	public showDetails(bookDetails: Book) {
+	public showDetails(bookDetails: Book): void {
 		this.router.navigate([`details/${bookDetails.title}`]);
 		const selectedBook: Book = {...bookDetails}
 		this.store.dispatch(sendBook(selectedBook))
 	}
 
-	public onToggleSwitch() {
+	public onToggleSwitch(): void {
 		this.state.switch.isExpanded = !this.state.switch.isExpanded;
 		this.state.switch.btnIcon = this.state.switch.isExpanded ? this.constants.icons.collapse : this.constants.icons.expand;
 	}
 
-	public onClickSwitchList(altList: BooklistTypes) {
+	public onClickSwitchList(altList: BooklistTypes): void {
 		const bookListData = altList === this.constants.booklistTypes.nonFiction ? this.constants.queryTypes.combinedNonFictionList : this.constants.queryTypes.combinedFictionList;
 		if (this.state.bookList[bookListData].length > 0) {
 			this.state.api.isLoading = true;

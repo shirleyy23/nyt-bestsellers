@@ -41,14 +41,14 @@ export class DetailsMainPanel implements OnInit, OnDestroy {
 		private route: ActivatedRoute
 	) {};
 
-	ngOnInit():void {
+	public ngOnInit():void {
 		this.subscriptions.bookSub = this.store$.select(selectedBookForDetailDisplay).subscribe((book: Book) => book ? this.book$ = book : this.book$ = null);
 		if (this.book$) {
 			this.rankData = this.getRankingData(this.book$.rank, this.book$.rank_last_week);
 		}
 	}
 
-	ngOnDestroy(): void {
+	public ngOnDestroy(): void {
 		for (let eachSub in this.subscriptions) {
 			this.subscriptions[eachSub].unsubscribe();
 		}

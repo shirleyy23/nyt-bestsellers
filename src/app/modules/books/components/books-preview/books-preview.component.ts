@@ -25,7 +25,8 @@ export class BooksPreview implements OnInit, OnChanges {
 	constructor(
 		private store$: Store<any>
 	) {}
-	ngOnInit() {
+
+	public ngOnInit(): void {
 		this.state.bookDetails = this.book;
 		if (this.state.bookDetails) {
 			this.state.url = this.parseTitleForURL(this.state.bookDetails.title);
@@ -34,7 +35,7 @@ export class BooksPreview implements OnInit, OnChanges {
 		}
 	}
 
-	ngOnChanges() {
+	public ngOnChanges(): void {
 		this.state.loadingState = this.loadingState;
 	}
 	public sendBookDataToDetails():void {

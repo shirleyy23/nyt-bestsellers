@@ -23,7 +23,7 @@ export class Link {
 	@Output() clickEvent = new EventEmitter<any>();
 	constructor() {};
 
-	public onClick() {
+	public onClick(): void {
 		!!this.clickEvent && this.clickEvent.emit()
 	}
 }
