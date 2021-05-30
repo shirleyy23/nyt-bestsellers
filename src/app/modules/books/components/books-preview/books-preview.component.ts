@@ -1,6 +1,5 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
-import { Book } from 'Core/models/models';
-import { Links, Buttons } from 'Core/models/constants';
+import { Book, Links, Buttons } from 'Core/models/models';
 import { Store } from '@ngrx/store';
 import { sendBook } from 'Core/actions/core.actions';
 

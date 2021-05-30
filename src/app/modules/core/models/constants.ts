@@ -1,7 +1,4 @@
-export enum Buttons {
-	primary,
-	secondary,
-}
+import { Book } from 'Core/models/models';
 
 export enum Links {
 	inline,

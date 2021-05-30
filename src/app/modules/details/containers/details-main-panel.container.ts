@@ -3,9 +3,8 @@ import { Store, select } from '@ngrx/store';
 import { selectedBookForDetailDisplay } from 'Core/selectors/core.selectors'; 
 import { Book, StoredSubscriptions } from 'Core/models/models';
 import { Subscription } from 'rxjs';
-import { ActivatedRoute, Params } from '@angular/router';
-import { Buttons, Links, RankingTypes } from 'Core/models/constants';
-import { ChangeInRankingsBlock } from 'Core/models/models';
+import { ActivatedRoute } from '@angular/router';
+import { ChangeInRankingsBlock, Buttons, Links, RankingTypes } from 'Core/models/models';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 @Component({

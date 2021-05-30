@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter, ViewEncapsulation} from '@angular/core';
-import { LinkType, Buttons, Links } from 'Core/models/constants';
+import { LinkType, Buttons, Links } from 'Core/models/models';
 
 
 @Component({

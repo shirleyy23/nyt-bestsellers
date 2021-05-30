@@ -1,5 +1,4 @@
 import { Subscription } from "rxjs";
-import { RankingTypes } from 'Core/models/constants';
 import { IconDefinition } from "@fortawesome/fontawesome-common-types";
 import { FullListTypes } from "App/modules/graphql/models/models";
 
@@ -56,4 +55,30 @@ export type DistinctBookListDataBlock = {
 
 export interface FullBookListDataBlock extends DistinctBookListDataBlock {
 	selectedList: Book[]
+}
+
+export enum Buttons {
+	primary,
+	secondary,
+}
+
+export enum Links {
+	inline,
+}
+
+export type LinkType = Buttons | Links;
+
+export enum Vendors {
+	amazon = 'Amazon',
+	appleBooks = 'Apple Books',
+	barnesAndNoble = 'Barnes and Noble',
+	booksAMillion = 'Books-A-Million',
+	bookShop = 'Bookshop',
+	indieBound = 'IndieBound'
+}
+
+export enum RankingTypes {
+	positive = 'positive',
+	negative = 'negative',
+	neutral = 'neutral'
 }
