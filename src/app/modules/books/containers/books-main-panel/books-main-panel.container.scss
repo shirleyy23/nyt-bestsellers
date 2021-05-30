@@ -12,7 +12,7 @@
       flex: 0 0 27.5%;
       display: flex;
       margin: 0 $spacing_regular $spacing_regular 0;
-      & > card {
+      & > books-preview {
         flex: 1 1 auto;
       }
       @media screen and (max-width: $large) {
@@ -110,6 +110,13 @@
         padding: 0.15rem $spacing_small_xxx;
         background-color: $grey_1000;
         color: $font_inverse_colour;
+      }
+    }
+  }
+  &--loadingState {
+    #{$blockName} {
+      &__switch {
+        display: none;
       }
     }
   }

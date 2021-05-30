@@ -81,6 +81,9 @@ export class BooksMainPanel implements OnInit, OnDestroy {
 				selectedList: this.constants.booklistTypes.fiction,
 				alternateList: this.constants.booklistTypes.nonFiction,
 				btnIcon: this.constants.icons.expand
+			},
+			api: {
+				fetchedData: false
 			}
 		}
 	}

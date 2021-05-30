@@ -1,4 +1,8 @@
-<section class="books-main-panel">
+<section
+	[ngClass]="{
+		'books-main-panel': true,
+		'books-main-panel--loading': !state.api.fetchedData
+	}">
 	<section class="books-main-panel__switch">
 		<fa-icon class="books-main-panel__switch-icon books-main-panel__switch-icon--mainIcon" size="2x"[icon]="constants.icons.main"></fa-icon>
 		<p class="books-main-panel__switch-helperText">viewing:</p>
@@ -28,7 +32,7 @@
 	</section>
 	<ul class="books-main-panel__list">
 		<li class="books-main-panel__list-item" *ngFor="let book of state.bookList.selectedList">
-			<books-preview [book]="book"></books-preview>
+			<books-preview [book]="book" [loadingState]="!state.api.fetchedData"></books-preview>
 		</li>
 	</ul>
 </section>

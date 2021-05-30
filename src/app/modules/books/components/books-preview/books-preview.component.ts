@@ -1,5 +1,5 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
-import { Book, Links, Buttons } from 'Core/models/models';
+import { Component, Input, OnInit, OnChanges, ViewEncapsulation } from '@angular/core';
+import { Book, Links, Buttons, BookPreviewState } from 'Core/models/models';
 import { Store } from '@ngrx/store';
 import { sendBook } from 'Core/actions/core.actions';
 
@@ -10,12 +10,9 @@ import { sendBook } from 'Core/actions/core.actions';
 	encapsulation: ViewEncapsulation.Emulated
 })
 
-export class BooksPreview implements OnInit {
-	public bookDetails: Book = {} as Book;
-	public url: string = '';
-	isNew: boolean = false;
-	previewDescription: string = '';
+export class BooksPreview implements OnInit, OnChanges {
 	@Input() book: Book = {} as Book;
+	@Input() loadingState: boolean = false;
 	constants = {
 		linkTypes: {
 			inline: Links.inline,
@@ -24,19 +21,34 @@ export class BooksPreview implements OnInit {
 		},
 		previewTextLimit: 100
 	}
+	state: BookPreviewState = this.initializeState();
 	constructor(
 		private store$: Store<any>
 	) {}
 	ngOnInit() {
-		this.bookDetails = this.book;
-		if (this.bookDetails) {
-			this.url = this.parseTitleForURL(this.bookDetails.title);
-			this.isNew = !this.bookDetails.rank_last_week;
-			this.previewDescription = this.formatPreviewText(this.bookDetails.description);
+		this.state.bookDetails = this.book;
+		if (this.state.bookDetails) {
+			this.state.url = this.parseTitleForURL(this.state.bookDetails.title);
+			this.state.isNew = !this.state.bookDetails.rank_last_week;
+			this.state.previewDescription = this.formatPreviewText(this.state.bookDetails.description);
 		}
 	}
+
+	ngOnChanges() {
+		this.state.loadingState = this.loadingState;
+	}
 	public sendBookDataToDetails():void {
-		this.store$.dispatch(sendBook(this.bookDetails));
+		this.store$.dispatch(sendBook(this.state.bookDetails));
+	}
+
+	private initializeState(): BookPreviewState {
+		return {
+			bookDetails: this.book,
+			url: '',
+			isNew: false,
+			previewDescription: '',
+			loadingState: this.loadingState
+		}
 	}
 
 	private parseTitleForURL(title: string): string {

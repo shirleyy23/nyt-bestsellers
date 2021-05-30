@@ -34,7 +34,18 @@ export interface BookPanelState {
 		selectedList: BooklistTypes;
 		alternateList: BooklistTypes;
 		btnIcon: IconDefinition;
+	},
+	api: {
+		fetchedData: boolean;
 	}
+}
+
+export interface BookPreviewState {
+	bookDetails: Book;
+	url: string;
+	isNew: boolean;
+	previewDescription: string;
+	loadingState: boolean;
 }
 
 export interface CoreState {
