@@ -1,7 +1,11 @@
-<section class="card">
-	<img src="{{bookDetails.book_image}}" alt="{{bookDetails.title}} book over" class="card__image">
-	<p *ngIf="isNew" class="card__status">NEW</p>
-	<h3 class="card__title">({{bookDetails.rank}}) {{ bookDetails.title}}</h3>
-	<p class="card__description">{{previewDescription}}</p>
-	<NavLink class="card__link" [text]="'View'" [type]="constants.linkTypes.primary" [url]="url" (clickEvent)="sendBookDataToDetails()"></NavLink>
+<section
+	[ngClass]="{
+		'book-preview': true,
+		'book-preview--loadingState': isLoading
+	}">
+	<img src="{{bookDetails.book_image}}" alt="{{bookDetails.title}} book cover" class="book-preview__image">
+	<p *ngIf="isNew" class="book-preview__status">NEW</p>
+	<h3 class="book-preview__title">({{bookDetails.rank}}) {{ bookDetails.title}}</h3>
+	<p class="book-preview__description">{{previewDescription}}</p>
+	<NavLink class="book-preview__link" [text]="'View'" [type]="constants.linkTypes.primary" [url]="url" (clickEvent)="sendBookDataToDetails()"></NavLink>
 </section>
